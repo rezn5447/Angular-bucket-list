@@ -6,12 +6,13 @@ describe('AboutComponent', () => {
   let component: AboutComponent;
   let fixture: ComponentFixture<AboutComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AboutComponent ]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        declarations: [AboutComponent]
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AboutComponent);
@@ -22,4 +23,12 @@ describe('AboutComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it(
+    'should render `about works!` in p tag',
+    async(() => {
+      const compiled = fixture.debugElement.nativeElement;
+      expect(compiled.querySelector('p').textContent).toContain('about works!');
+    })
+  );
 });
