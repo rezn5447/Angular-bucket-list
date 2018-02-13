@@ -7,9 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-  constructor(private route: ActivatedRoute) {
-    this.route.params.subscribe(res => console.log(res.id));
-  }
+  constructor(route: ActivatedRoute) {}
 
   ngOnInit() {}
 }
